@@ -12,9 +12,7 @@ FROM SalesLT.SalesOrderDetail;
 SELECT COUNT(*) AS TotalOrders
 FROM SalesLT.SalesOrderHeader;
 
-
-
-/* Sales by country */
+/* Sales by country ($) */
 
 SELECT 
     a.CountryRegion AS Country,
@@ -30,33 +28,25 @@ ORDER BY
     Sales DESC;
 
 
+/* SALES BY CLIENTS ADRESS */
 
-# Sales by Country (Esto me dará solo USA Y U.KIN)
-Clients per Country 
-Sales by canada clients = 0 
+SELECT 
+    a.CountryRegion AS Country,
+    COUNT(DISTINCT c.CustomerID) AS TotalCustomers,
+    COUNT(DISTINCT h.SalesOrderID) AS TotalSales
+FROM 
+    SalesLT.Address a
+LEFT JOIN 
+    SalesLT.CustomerAddress ca ON a.AddressID = ca.AddressID
+LEFT JOIN 
+    SalesLT.Customer c ON ca.CustomerID = c.CustomerID
+LEFT JOIN 
+    SalesLT.SalesOrderHeader h ON c.CustomerID = h.CustomerID
+GROUP BY 
+    a.CountryRegion
+ORDER BY 
+    a.CountryRegion;
 
+# Here I can see that the company has customers from Canada but they havent bought any product
 
-
-
-
-
-
-
-
-
-
-
-/*** CLIENTS ***/
-
-
-/* Cual fue el producto mas vendido durante 2023? */
-
-/*  */
-
-/*  */
-
-/*  */
-
-/*  */
-
-/*  */
+/* SALES BY MONTH */
