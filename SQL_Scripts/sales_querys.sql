@@ -26,7 +26,7 @@ ORDER BY
     Sales DESC;
 
 
-/* NUMBER OF SALES BY CLIENTS LOCATION */
+/* Number of sales by client location */
 
 SELECT 
     a.CountryRegion AS Country,

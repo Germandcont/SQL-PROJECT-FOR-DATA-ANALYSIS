@@ -1,11 +1,11 @@
-/* Total Products */
+/* Total products */
 
 SELECT COUNT(DISTINCT ProductID) AS NumberOfProducts
 FROM SalesLT.Product
 WHERE DiscontinuedDate IS NULL;
 
 
-/* Total Of Different Products Sold */
+/* Total of different products sold */
 
 SELECT COUNT(DISTINCT p.ProductID) AS NumberOfProducts
 FROM SalesLT.Product p
