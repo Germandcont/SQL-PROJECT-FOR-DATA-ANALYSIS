@@ -1,16 +1,14 @@
-Basic Exploratory Analysis
-
-# SALES 
-
 /* Total Sales */
 
 SELECT SUM(UnitPrice * OrderQty) AS TotalSales
 FROM SalesLT.SalesOrderDetail;
 
+
 /* Total Orders */
 
 SELECT COUNT(*) AS TotalOrders
 FROM SalesLT.SalesOrderHeader;
+
 
 /* Sales by country ($) */
 
@@ -48,5 +46,3 @@ ORDER BY
     a.CountryRegion;
 
 # Here I can see that the company has customers from Canada but they havent bought any product
-
-/* SALES BY MONTH */
