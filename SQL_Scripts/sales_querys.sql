@@ -7,7 +7,7 @@ FROM SalesLT.SalesOrderDetail;
 /* Total Orders */
 
 SELECT COUNT(*) AS TotalOrders
-FROM SalesLT.SalesOrderHeader;
+FROM SalesLT.SalesOrderHeader; 
 
 
 /* Sales by country ($) */
@@ -26,7 +26,7 @@ ORDER BY
     Sales DESC;
 
 
-/* SALES BY CLIENTS ADRESS */
+/* NUMBER OF SALES BY CLIENTS LOCATION */
 
 SELECT 
     a.CountryRegion AS Country,
@@ -45,4 +45,4 @@ GROUP BY
 ORDER BY 
     a.CountryRegion;
 
-# Here I can see that the company has customers from Canada but they havent bought any product
+/* Here I can see that the company has customers from Canada but they havent bought any product */ 

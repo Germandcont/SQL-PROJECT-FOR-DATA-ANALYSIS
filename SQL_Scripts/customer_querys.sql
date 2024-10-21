@@ -1,6 +1,6 @@
 /* Total Customers */
 
-
-TOP 5 CUSTOMERS 
+SELECT COUNT(DISTINCT CustomerID) AS NumberOfCustomers
+FROM SalesLT.Customer;
 
 
